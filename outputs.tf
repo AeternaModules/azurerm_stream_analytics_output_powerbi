@@ -1,3 +1,7 @@
+output "stream_analytics_output_powerbis_id" {
+  description = "Map of id values across all stream_analytics_output_powerbis, keyed the same as var.stream_analytics_output_powerbis"
+  value       = { for k, v in azurerm_stream_analytics_output_powerbi.stream_analytics_output_powerbis : k => v.id }
+}
 output "stream_analytics_output_powerbis_dataset" {
   description = "Map of dataset values across all stream_analytics_output_powerbis, keyed the same as var.stream_analytics_output_powerbis"
   value       = { for k, v in azurerm_stream_analytics_output_powerbi.stream_analytics_output_powerbis : k => v.dataset }
